@@ -9,6 +9,7 @@
             border: 10px solid yellow;
             margin-bottom: 10px;
             width: 720px;
+            font-family: arial;
         }
 
         label {
@@ -16,6 +17,7 @@
             text-align: right;
             vertical-align: top;
             display: inline-block;
+            font-family: arial;
         }
 
         textarea {
@@ -27,17 +29,35 @@
             width: auto;
         }
 
-        .left {
+        .leftup {
             text-align: center;
             vertical-align: top;
             background-color: #AD2D29;
+            padding: 5px 8px 5px 8px;
+            color: white;
+        }
+        
+        .leftdown {
+            text-align: center;
+            vertical-align: top;
+            background-color: #AD2D29;
+            padding: 5px 11px 5px 10px;
             color: white;
         }
 
-        .right {
+        .rightup {
             text-align: center;
             vertical-align: top;
             background-color: #8A2C7F;
+            padding: 5px 14px 5px 13px;
+            color: white;
+        }
+        
+        .rightdown {
+            text-align: center;
+            vertical-align: top;
+            background-color: #8A2C7F;
+            padding: 5px 10px 5px 10px;
             color: white;
         }
 
@@ -50,8 +70,8 @@
     <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
         <fieldset>
             <legend>Your Face</legend>
-            <label for="imgToUpload">Your image:<label>
-            <input type="file" name="imgToUpload" required>
+            <label for="imgUpload">Your image:</label>
+            <input type="file" name="imgUpload" required>
             <br>
             <label for="preview">Image preview:<label>
             <img src="" id="preview">
@@ -69,8 +89,8 @@
             <label for="age">Age:</label>
             <input type="number" name="age" value="18" required>
             <br>
-            <lable for="dateOfBirth">Date of birth:</label>
-            <input type="date" name="dateOfBirth">
+            <label for="birthday">Date of birth:</Label>
+            <input type="date" name="birthday">
             <br>
             <label for="favoriteColor">Favorite color:</label>
             <input type="color" name="favoriteColor">
@@ -89,14 +109,14 @@
         <fieldset>
             <legend>Your Indicators</legend>
             <label for="height">Height:</label> 
-            <span class="left">Short</span>
+            <span class="leftup">Short</span>
             <input type="range" min="0" max="300" name="height"> 
-            <span class="right">Tall</span>
+            <span class="rightup">Tall</span>
             <br>
             <label for="salary">Salary:</label> 
-            <span class="left">Poor</span> 
+            <span class="leftdown">Poor</span> 
             <input type="range" min="0" max="100" name="salary">
-            <span class="right">Rich</span>
+            <span class="rightdown">Rich</span>
         </fieldset>
 
         <fieldset>
@@ -110,7 +130,7 @@
             <label for="address">Address:</label>
             <textarea name="address"></textarea> 
             <br>
-            <label for="contactMethod" class="checkandradio">Method to contact you:</label> 
+            <label for="contactMethod" class="checkandradio">Method to contact you:</label>
             <input type="checkbox" name="contactMethod" value="email">Email
             <input type="checkbox" name="contactMethod" value="whatsapp">Whatsapp
             <input type="checkbox" name="contactMethod" value="inappchat">In-app chat
