@@ -4,9 +4,42 @@
 
 <head>
     <style>
+        fieldset {
+            background: lightyellow;
+            border: 10px solid yellow;
+            margin-bottom: 10px;
+            width: 720px;
+        }
 
+        label {
+            width: 180px;
+            text-align: right;
+            vertical-align: top;
+            display: inline-block;
+        }
 
+        textarea {
+            width: 360px;
+            height: 50px;
+        }
 
+        .checkandradio {
+            width: auto;
+        }
+
+        .left {
+            text-align: center;
+            vertical-align: top;
+            background-color: #AD2D29;
+            color: white;
+        }
+
+        .right {
+            text-align: center;
+            vertical-align: top;
+            background-color: #8A2C7F;
+            color: white;
+        }
 
     </style>
 </head>
@@ -14,13 +47,13 @@
 
 <body>
     <h1>Please Enter Your Details For Our Dating Website!</h1>
-    <form action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
+    <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
         <fieldset>
             <legend>Your Face</legend>
             <label for="imgToUpload">Your image:<label>
             <input type="file" name="imgToUpload" required>
             <br>
-            <label for="imgPreview">Image preview:<label>
+            <label for="preview">Image preview:<label>
             <img src="" id="preview">
         </fieldset>
 
@@ -30,8 +63,8 @@
             <input type="text" name="fullName" placeholder="Your full name" required>
             <br>
             <label for="gender">Gender:</label>
-            <input type="radio" name="gender" required>Male
-            <input type="radio" name="gender" required>Female
+            <input type="radio" name="gender" value="male" required>Male
+            <input type="radio" name="gender" value="female" required>Female
             <br>
             <label for="age">Age:</label>
             <input type="number" name="age" value="18" required>
@@ -43,7 +76,7 @@
             <input type="color" name="favoriteColor">
             <br>
             <label for"countrySelect">Which country:</label>
-            <select>
+            <select name="countrySelect">
                 <option value=""></option>
                 <option value="US">US</option>
                 <option value="UK">UK</option>
@@ -56,10 +89,14 @@
         <fieldset>
             <legend>Your Indicators</legend>
             <label for="height">Height:</label> 
-            Short <input type="range" min="0" max="300" name="height"> Tall
+            <span class="left">Short</span>
+            <input type="range" min="0" max="300" name="height"> 
+            <span class="right">Tall</span>
             <br>
             <label for="salary">Salary:</label> 
-            Poor <input type="range" min="0" max="100" name="salary"> Rich
+            <span class="left">Poor</span> 
+            <input type="range" min="0" max="100" name="salary">
+            <span class="right">Rich</span>
         </fieldset>
 
         <fieldset>
@@ -73,10 +110,10 @@
             <label for="address">Address:</label>
             <textarea name="address"></textarea> 
             <br>
-            <label for="contactMethod">Method to contact you:</label> 
-            <input type="checkbox" name="contactMethod">Email
-            <input type="checkbox" name="contactMethod">Whatsapp
-            <input type="checkbox" name="contactMethod">In-app chat
+            <label for="contactMethod" class="checkandradio">Method to contact you:</label> 
+            <input type="checkbox" name="contactMethod" value="email">Email
+            <input type="checkbox" name="contactMethod" value="whatsapp">Whatsapp
+            <input type="checkbox" name="contactMethod" value="inappchat">In-app chat
         </fieldset>
 
         <input type="submit" value="Submit!">
