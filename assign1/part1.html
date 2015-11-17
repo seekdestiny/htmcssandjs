@@ -11,8 +11,8 @@
     <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
         <fieldset>
             <legend>Your Face</legend>
-            <label for="imgToUpload">Your image:<label>
-            <input type="file" name="imgToUpload" required>
+            <label for="imgUpload">Your image:</label>
+            <input type="file" id="imgUpload" name="imgUpload" required>
             <br>
             <label for="preview">Image preview:<label>
             <img src="" id="preview">
@@ -21,23 +21,23 @@
         <fieldset>
             <legend>Your General Details</legend>
             <label for="fullName">Name:</label> 
-            <input type="text" name="fullName" placeholder="Your full name" required>
+            <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
             <br>
             <label for="gender">Gender:</label>
             <input type="radio" name="gender" value="male" required>Male
             <input type="radio" name="gender" value="female" required>Female
             <br>
             <label for="age">Age:</label>
-            <input type="number" name="age" value="18" required>
+            <input type="number" id="age" name="age" value="18" required>
             <br>
-            <lable for="dateOfBirth">Date of birth:</label>
-            <input type="date" name="dateOfBirth">
+            <label for="birthday">Date of birth:</Label>
+            <input type="date" id="birthday" name="birthday">
             <br>
             <label for="favoriteColor">Favorite color:</label>
-            <input type="color" name="favoriteColor">
+            <input type="color" id="favoriteColor" name="favoriteColor">
             <br>
             <label for"countrySelect">Which country:</label>
-            <select name="countrySelect">
+            <select id="countrySelect" name="countrySelect">
                 <option value=""></option>
                 <option value="US">US</option>
                 <option value="UK">UK</option>
@@ -50,24 +50,28 @@
         <fieldset>
             <legend>Your Indicators</legend>
             <label for="height">Height:</label> 
-            Short <input type="range" min="0" max="300" name="height"> Tall
+            <span class="leftup">Short</span>
+            <input type="range" min="0" max="300" name="height"> 
+            <span class="rightup">Tall</span>
             <br>
             <label for="salary">Salary:</label> 
-            Poor <input type="range" min="0" max="100" name="salary"> Rich
+            <span class="leftdown">Poor</span> 
+            <input type="range" min="0" max="100" name="salary">
+            <span class="rightdown">Rich</span>
         </fieldset>
 
         <fieldset>
             <legend>Your Contact Information</legend>
             <label for="email">Email:</label> 
-            <input type="email" name="email" required>
+            <input type="email" id="email" name="email" required>
             <br>
             <label for="telephoneNumber">Mobile:</label> 
-            <input type="tel" name="telephoneNumber">
+            <input type="tel" id="telephoneNumber" name="telephoneNumber">
             <br>
             <label for="address">Address:</label>
             <textarea name="address"></textarea> 
             <br>
-            <label for="contactMethod">Method to contact you:</label> 
+            <label for="contactMethod" class="checkandradio">Method to contact you:</label>
             <input type="checkbox" name="contactMethod" value="email">Email
             <input type="checkbox" name="contactMethod" value="whatsapp">Whatsapp
             <input type="checkbox" name="contactMethod" value="inappchat">In-app chat
@@ -75,6 +79,8 @@
 
         <input type="submit" value="Submit!">
     </form>
+    
+    <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
 </body>
 
 </html>
